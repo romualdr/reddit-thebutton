@@ -12,6 +12,10 @@ _gaq.push(['_trackPageview']);
 // !Analytics
 var state = {};
 
+
+/*
+	Update GUI with new data
+*/
 function updateGUI(_state) {
 	if (_state.left !== state.left)
 		document.querySelector('#time-count').innerHTML = _state.left - 1;
@@ -27,6 +31,9 @@ function updateGUI(_state) {
 	state = _state;
 }
 
+/*
+	@desc: Listen to message from background
+*/
 chrome.runtime.onMessage.addListener(function (message, sender, reponse) {
 	if (message.action) {
 		if (window.actions[message.action])
@@ -35,6 +42,11 @@ chrome.runtime.onMessage.addListener(function (message, sender, reponse) {
 	}
 	updateGUI(message);
 });
+
+/*
+	@desc: Bind buttons - Invoke tab creation when clicked
+	2 links : My twitter + sub-reddit /thebutton
+*/
 document.addEventListener("DOMContentLoaded", function(event) { 
 	var links = document.querySelectorAll('._link');
 	for (var i = 0; i < links.length; i++) {

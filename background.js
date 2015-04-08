@@ -1,6 +1,7 @@
 (function () {
 	"use strict";
 	
+    // Setting first values - in case reddit doesn't answer ...
 	window.url = "wss://wss.redditmedia.com/thebutton?h=b915df7048013948fef513d53f58b38b3eecf7fc&e=1428579198";
 	window.socket = null;
 	window.state = {
@@ -10,6 +11,10 @@
 	};
 	window.actions = {};
 
+    /*
+        @desc: State management
+        TODO: Maybe this function should send an update to popup ... would be nicer
+    */
     function updateState(key, value) {
     	window.state[key] = value;
     };
@@ -18,6 +23,7 @@
     	return window.state[key];
     };
 
+    // Update the label
     function updateTime() {
     	var time = getState('left');
     	if (!time)
@@ -74,17 +80,23 @@
 	    window.socket = socket;
     }
 
+    /*
+        @desc:  Restart function
+                Get a new socket URL
+    */
     window.actions['restart'] = function () {
-    	
     	var xhr = new XMLHttpRequest();
 		xhr.open("GET", "http://www.reddit.com/r/thebutton/", true);
 		xhr.onreadystatechange = function() {
 		  if (xhr.readyState == 4) {
+
+            // Get the new thebutton websocket url and discard everything else
 		  	if (xhr.responseText.indexOf('wss://wss.redditmedia.com/thebutton') !== -1) {
 			    var url = xhr.responseText.substr(xhr.responseText.indexOf('wss://wss.redditmedia.com/thebutton'), 100);
 			    url = url.substr(0, url.indexOf('",'));
 			    window.url = url;
 			}
+            // Start the socket connection
 			start();
 		  }
 		}
@@ -97,6 +109,10 @@
     	chrome.runtime.sendMessage(window.state);
     };
 
+    /*
+        @desc: Listen for popup action
+        TODO: { popup: "action" } to be able to get only popup / action and action namespacing
+    */
     chrome.runtime.onMessage.addListener(function (message, sender, reponse) {
 		if (message.action && window.actions[message.action]) {
 			window.actions[message.action]();
