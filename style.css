@@ -1,0 +1,96 @@
+body {
+	font-family: Georgia, Arial, serif;
+	margin-bottom: 40px;
+}
+header {
+	margin-bottom: 10px;
+}
+#restartscreen {
+	background-color: rgba(0,0,0,0.8);
+	color: white;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 30px;
+	z-index: 999;
+	text-align: center;
+	font-size: 25px;
+	padding-top: 60px;
+	display: none;
+}
+._link {
+	cursor: pointer;
+}
+.restart {
+	float: right;
+	color: #999;
+	text-decoration: underline;
+	cursor: pointer;
+}
+.title {
+	line-height: 30px;
+	margin: 0;
+	font-size: 18px;
+	padding: 0;
+}
+.thebutton-pie-container, .thebutton-container {
+  background: #eaeaea;
+  border: 1px solid #E0E0E0;
+  box-shadow: inset 0px 1px 1px 0px rgba(73,73,73,0.1);
+  border-radius: 5px;
+}
+#thebutton {
+  outline: none;
+  margin: 10px;
+  background-color: #24a0ed;
+  background-image: linear-gradient(-180deg,rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
+  border: 1px solid #1394e5;
+  box-shadow: 0px 4px 0px 0px #0f76b6,0px 0px 0px 0px rgba(255,255,255,0.6),0px 6px 4px 0px rgba(0,0,0,0.3),inset 0px 1px 0px 0px rgba(255,255,255,0.2);
+  border-radius: 5px;
+  height: 40px;
+  width: 170px;
+  transform: translate(0,-4px);
+  transition: all 0.1s;
+  position: relative;
+}
+.thebutton-text {
+	position: absolute;
+	color: white;
+	font-size: 16px;
+	top: 10px;
+	left: 12px;
+	right: 0;
+}
+.tooltip {
+	text-align: center;
+	color: #AAA;
+	font-weight: 600;
+	font-size: 12px;
+}
+#count {
+	 font-family: monospace;
+	font-family: 
+}
+.participants {
+	  color: rgb(115, 115, 115);
+	  font-size: 11.9999990463257px;
+	  font-style: normal;
+	  font-variant: normal;
+	  font-weight: normal;
+	  height: auto;
+	  text-align: right;
+	  white-space: nowrap;
+	  float: right;
+	  margin-top: 10px;
+}
+footer {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #F7F7F7;
+	color: #A7A7A7;
+	padding: 10px;
+	font-size: 10px;
+}
