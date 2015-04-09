@@ -19,7 +19,11 @@ var ELS = {
 	"#time-count": null,
 	'#participants-count': null,
 	'#startscreen': null,
-	'body': null
+	'body': null,
+	'#pressers': null,
+	'#non_pressers': null,
+	'#ttl': null,
+	'#last': null,
 };
 
 
@@ -32,6 +36,10 @@ function updateGUI() {
 	ELS['#startscreen'].style.display = (STATE.connected && STATE.started ? "none" : "block");
 	ELS['#startscreen'].innerHTML = (STATE.started ? (STATE.connected ? "" : "Working ...") : "Stopped");
 	ELS["body"].className = "page-" + INTERNALS.page + " " + (STATE.started ? "started" : "stopped");
+	ELS['#pressers'].innerHTML = STATE.pressers;
+	ELS['#non_pressers'].innerHTML = STATE.non_pressers;
+	ELS['#ttl'].innerHTML = STATE.max_ttl;
+	ELS['#last'].innerHTML = STATE.previous_time + "s";
 }
 
 /*
@@ -42,7 +50,7 @@ document.addEventListener("DOMContentLoaded", function(event) {
 	initializeLinks();
 	initializeELS();
 
-	chrome.runtime.sendMessage({ action: "doRefresh" });
+	chrome.runtime.sendMessage({ action: "doUpdate" });
 });
 
 function initializeLinks() {
@@ -104,7 +112,7 @@ window.triggers['start'] = function () {
 	@desc: I/O with background
 	       Background -> actions
 */
-window.actions['refresh'] = function (message) {
+window.actions['update'] = function (message) {
 	STATE = message.state;
 	updateGUI();
 };

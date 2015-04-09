@@ -24,13 +24,26 @@ body.page-options > nav ._trigger[data-trigger-value="options"] {
 	cursor: pointer;
 	text-decoration: underline;
 }
+nav, .stats {
+	display: flex;
+}
+.stats > * {
+	font-size: 10px;
+	padding: 0 5px;
+	background-color: #F7F7F7;
+	border-radius: 5px;
+	margin-right: 5px;
+	line-height: 15px;
+}
+.stats > *:last-child {
+	margin-right: 0;
+}
 nav {
 	position: absolute;
   	top: 0;
   	left: 0;
   	background-color: #F7F7F7;
   	right: 0;
-  	display: flex;
   	flex-direction: row-reverse;
 }
 nav > span {
@@ -65,40 +78,40 @@ header {
 	font-size: 18px;
 	padding: 0;
 }
-/*.thebutton-pie-container, .thebutton-container {
-  background: #eaeaea;
-  border: 1px solid #E0E0E0;
-  box-shadow: inset 0px 1px 1px 0px rgba(73,73,73,0.1);
-  border-radius: 5px;
+.flair {
+  font-family: verdana, arial, helvetica, sans-serif;
+  height: 12px;
+  line-height: 12px;
+  border-radius: 12px;
+  border: none;
+  padding: 0 5px;
+  max-width: 500px;
+  vertical-align: middle;
+  font-size: 10px!important;
 }
-#thebutton {
-  margin: 10px;
-  height: 40px;
-  width: 170px;
-  transform: translate(0,-4px);
-  transition: all 0.1s;
-  position: relative;
-  color: #555;
+.flair.non_presser {
+	color: #fff;
+  background: #888;
 }
-#thebutton.thebutton-style {
-	outline: none;
-	background-color: #24a0ed;
-	color: white;
-  background-image: linear-gradient(-180deg,rgba(255,255,255,0.1) 0%,rgba(0,0,0,0.1) 100%);
-  border: 1px solid #1394e5;
-  box-shadow: 0px 4px 0px 0px #0f76b6,0px 0px 0px 0px rgba(255,255,255,0.6),0px 6px 4px 0px rgba(0,0,0,0.3),inset 0px 1px 0px 0px rgba(255,255,255,0.2);
-  border-radius: 5px;
+.flair.presser {
+	  color: #fff;
+  background: #820080;
 }
-.thebutton-text {
-	text-decoration: underline;
-	position: absolute;
-	font-size: 16px;
-	top: 10px;
-	left: 12px;
-	right: 0;
-}*/
+.flair.presser {
+	  color: #fff;
+  background: #820080;
+}
+.flair.ttl {
+	  color: #fff;
+  background: #e59500;
+}
+.flair.last {
+	  color: #fff;
+  background: #e50000;
+}
 .main-content {
 	text-align: center;
+	margin-bottom: 20px;
 }
 .time-wrapper {
 	font-size: 16px;

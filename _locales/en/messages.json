@@ -7,7 +7,7 @@
 		"message": "Keep an eye on the timer, never miss to press /r/thebutton.",
 		"description": "Extension description"
 	},
-	"errUnableToGetUrl": {
+	"errUnableToContactReddit": {
 		"message": "Oops ... looks like we can't connect to reddit right now.",
 		"description": "Error when WSS url can't be retrieved"
 	}
