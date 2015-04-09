@@ -23,8 +23,8 @@
                 update.pressers = StateMachine.get('pressers') + delta;
 
                 update.max_ttl =  update.non_pressers * 59;
+                update.previous_time = StateMachine.get('left') - 1;
             }
-            update.previous_time = StateMachine.get('left') - 1;
         }
 
         // Bulk the update
@@ -38,6 +38,7 @@
         var _state = {
             connected: false,
             left: NaN,
+            previous_time: 0,
             participants: 0,
             pressers: 0,
             non_pressers: 0,
