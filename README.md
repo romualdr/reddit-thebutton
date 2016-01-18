@@ -1,5 +1,7 @@
 # reddit-thebutton
 
+**READ THIS:** As TheButton expirement is now ended, this will **NOT** work. But you can still adapt the code for your own extension.
+
 /r/thebutton is a social experiment on reddit. It was at first a April Fools' joke, but became very popular among redditors.
 
 This is a opensource Chrome extention to watch it.
